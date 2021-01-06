@@ -17,11 +17,7 @@ dp = defaultdict(lambda:-1)
 dpMove = defaultdict(int)
 
 def countActiveBit(num):
-	binary = bin(num)[2:]
-	count = 0
-	for i in binary:
-		count += i == '1'
-	return count
+	return bin(num)[2:].count('1');
 
 def getIdx(n1, n2):
 	return triangleNumber(n1) + n2
@@ -56,8 +52,11 @@ def getNextState(i, j, num):
 
 
 def generateState(num):
-	if countActiveBit(num) == nDot - 1: 
+	activeBit = countActiveBit(num)
+	if activeBit == nDot - 1: 
 		return 0
+	if activeBit >= nDot:
+		return 1
 
 	if dp[num] != -1:
 		return dp[num]
@@ -80,10 +79,6 @@ def generateState(num):
 	return winState
 
 generateState(0)
-
-# idx = 0
-# for i in range(nDot):
-# 	generateState(1 << i)
 
 with open("soul.js", "w") as f:
     f.write("let winningMove = " + json.dumps(dpMove) + "\n")
