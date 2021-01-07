@@ -10,11 +10,9 @@ dc  = [-1,  0, -1, 1, 0, 1]
 def triangleNumber(i):
 	return i * (i + 1) // 2
 
-# a state is a losing state if ALL possible action lead to winning state
-# a state is a winning state if ONE possible action lead to losing state
-nDot = triangleNumber(nRow);
-dp = defaultdict(lambda:-1)
-dpMove = defaultdict(int)
+nDot 	= triangleNumber(nRow);
+dp 		= defaultdict(lambda:-1)
+dpMove 	= defaultdict(int)
 
 def countActiveBit(num):
 	return bin(num)[2:].count('1');
