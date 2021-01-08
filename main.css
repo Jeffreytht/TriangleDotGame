@@ -6,7 +6,7 @@ html, body{
 }
 
 .main{
-	background-color: #FFFFCC;
+	background-color: white;
 	text-align : center; 
 	height:100%;
 	width :100%;
@@ -30,4 +30,24 @@ html, body{
 	margin :5px;
 }
 
+.title{
+	font-family: Helvetica;
+	font-weight: bold;
+	color: green
+}
 
+.btn-success{
+	background-color: #4CAF50; /* Green */
+  	border: none;
+  	color: white;
+  	padding: 10px 10px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+}
+
+.my-1{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
